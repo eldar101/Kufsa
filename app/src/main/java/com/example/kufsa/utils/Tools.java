@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This class defines the tools for various parts of app
@@ -105,5 +107,17 @@ public class Tools {
         view.getGlobalVisibleRect(actualPosition);
         final Rect screen = new Rect(0, 0, Resources.getSystem().getDisplayMetrics().widthPixels, Resources.getSystem().getDisplayMetrics().heightPixels);
         return actualPosition.intersect(screen);
+    }
+
+    // generate keywords for search
+    public static List<String> generateKeywords(String name) {
+        List<String> keywords = new ArrayList<>();
+        name = name.toLowerCase();
+        for (int i = 0; i < name.length(); i++) {
+            for (int j = i + 1; j < name.length() + 1; j++) {
+                keywords.add(name.substring(i, j));
+            }
+        }
+        return keywords;
     }
 }

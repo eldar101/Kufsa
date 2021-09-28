@@ -158,7 +158,9 @@ public class CatalogFragment extends Fragment {
                     boardGameQueryFilterCall(query);
                 } else {
                     // Handling case sensitivity queries
-                    if (s.toString().equals(s.toString().toLowerCase())) {
+                    Query query = gamesCollection.whereArrayContains("keywords", s.toString().toLowerCase());
+                    boardGameQueryFilterCall(query);
+                    /*if (s.toString().equals(s.toString().toLowerCase())) {
                         Query query = gamesCollection.whereEqualTo("name_lowercase", s.toString()).orderBy("name_lowercase");
                         boardGameQueryFilterCall(query);
                     } else if (s.toString().equals(s.toString().toUpperCase())) {
@@ -167,7 +169,7 @@ public class CatalogFragment extends Fragment {
                     } else {
                         Query query = gamesCollection.whereEqualTo("name", s.toString()).orderBy("name");
                         boardGameQueryFilterCall(query);
-                    }
+                    }*/
 
                 }
             }
