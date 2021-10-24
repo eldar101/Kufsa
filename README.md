@@ -1,6 +1,6 @@
 Kufsa
 
-Android app for Advanced Java course 20503 - OUI.
+Android app for Advanced Java course - OUI.
 
 This project is an android app for managing a board game database.
 The user can view various board games, sort them and add them to his favorites.
